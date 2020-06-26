@@ -6,20 +6,29 @@ class RouteGenerator {
     private static routelist: Array<RouteList> = [];
 
     public static getRoute(): any {
-        console.log(RouteGenerator.generate(routes));
+        return this.generate(routes);
     }
-    
-    private static generate(primaryRouteList:Array<any>): Array<RouteList> {
+
+    private static generate(primaryRouteList:Array<any>, initPath? : string): Array<RouteList> {
         
         primaryRouteList.forEach((route) => {
             if(route.children === undefined) {
-                this.routelist.push(route)
+                if(initPath == null) {
+                    this.routelist.push(route)
+                } else {
+                    if(route.path !== '/') {
+                        route.path = initPath + route.path;
+                    } else {
+                        route.path = initPath
+                    }
+                    this.routelist.push(route);
+                }
             }
             else {
-                RouteGenerator.generate(route.children);
+                this.generate(route.children, route.path);
             }
         })
-        return RouteGenerator.routelist
+        return this.routelist
     }
 }
 export default RouteGenerator
