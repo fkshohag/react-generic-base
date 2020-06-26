@@ -4,6 +4,12 @@ export const AppHomeStyle = makeStyles((theme) => ({
     root: {
       display: 'flex',
     },
+    menuItem: {
+        width: drawerWidth,
+    },
+    menuItemIcon: {
+        color: '#97c05c',
+    },
     appBar: {
       transition: theme.transitions.create(['margin', 'width'], {
         easing: theme.transitions.easing.sharp,
