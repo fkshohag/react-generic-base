@@ -1,6 +1,6 @@
 import React from 'react';
 import { BoxService } from '../../services/BoxService';
-import SignIn from '../SignIn/SignIn';
+import { Link } from 'react-router-dom';
 
 export interface Props {
   name: string
@@ -34,7 +34,7 @@ class Box extends React.Component<Props, State> {
 
   render() {
     return <div>
-      <SignIn></SignIn>
+      <Link to="/sing">Shop Now </Link>
     </div>
   }
 }

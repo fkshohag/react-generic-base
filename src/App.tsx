@@ -1,13 +1,18 @@
 import React from 'react';
 import './App.css';
-import Box from './components/Box/Box';
+import { Route } from 'react-router-dom';
+import routes from './AppRouting.Module';
 
 class App extends React.Component {
   render() {
+    const routeComponents = routes.map(({ path, component }, key) =>
+      <Route exact path={path} component={component} key={key} />);
     return (
-      <div className="App">
-        <Box name = "Fazlul Kabir Shohag" />
-      </div>
+      <main>
+        <switch>
+          {routeComponents}
+        </switch>
+      </main>
     );
   }
 }
