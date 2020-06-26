@@ -1,14 +1,17 @@
 import Box from './components/Box/Box';
+import AnotherChild from './anotherChild';
 const ChildrenRoutes = [
     {
-        exact: false,
         path: '/',
         component: Box
     },
     {
-        exact: false,
         path: '/box',
         component: Box
+    },
+    {
+        path: '/another',
+        children: AnotherChild
     }
 ]
 

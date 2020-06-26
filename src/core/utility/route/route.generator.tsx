@@ -9,23 +9,20 @@ class RouteGenerator {
         return this.generate(routes);
     }
 
-    private static generate(primaryRouteList:Array<any>, initPath? : string): Array<RouteList> {
-        
+    private static generate(primaryRouteList: Array<any>, initPath?: string): Array<RouteList> {
+
         primaryRouteList.forEach((route) => {
-            if(route.children === undefined) {
-                if(initPath == null) {
+            if (route.children === undefined) {
+                if (initPath == null) {
                     this.routelist.push(route)
                 } else {
-                    if(route.path !== '/') {
-                        route.path = initPath + route.path;
-                    } else {
-                        route.path = initPath
-                    }
+                    route.path = route.path !== '/' ? initPath + route.path : initPath
                     this.routelist.push(route);
                 }
             }
             else {
-                this.generate(route.children, route.path);
+                initPath !== undefined ? this.generate(route.children, initPath + route.path) :
+                    this.generate(route.children, route.path);
             }
         })
         return this.routelist
