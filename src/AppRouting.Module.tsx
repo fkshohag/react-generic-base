@@ -6,7 +6,6 @@ const routes = [
         exact: true,
         path: '/',
         component: Box,
-        children: ChildrenRoutes
     },
     {
         exact: false,
@@ -14,9 +13,8 @@ const routes = [
         component: SignIn
     },
     {
-        exact: false,
         path: '/children',
-        component: SignIn
+        children: ChildrenRoutes
     }
 ]
 

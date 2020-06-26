@@ -1,22 +1,23 @@
-import routes from "../../../AppRouting.Module";
-import { RouteList, ChildrenList } from './routeInterface';
+import routes from '../../../AppRouting.Module';
+import { RouteList } from './routeInterface';
 
 
 class RouteGenerator {
-    public static getChildrenRoute(childrenList:Array<ChildrenList>): any {
-
+    private static routelist: Array<RouteList> = [];
+    public static getRoute(): any {
+        console.log(RouteGenerator.generate(routes));
     }
-    public static routes(): any {
-        let routelist: Array<RouteList> = [];
-        routes.forEach((route) => {
+    private static generate(primaryRouteList:Array<any>): Array<RouteList> {
+        
+        primaryRouteList.forEach((route) => {
             if(route.children === undefined) {
-                routelist.push(route)
+                this.routelist.push(route)
             }
             else {
-
+                RouteGenerator.generate(route.children);
             }
         })
-        console.log(routelist)
+        return RouteGenerator.routelist
     }
 }
 export default RouteGenerator
