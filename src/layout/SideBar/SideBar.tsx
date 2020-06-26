@@ -1,13 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import styles from './SideBar.module.scss';
 
-class SideBar extends React.Component {
-
-  render() {
-    return <div>
-      <Link to="/sing">Shop Now </Link>
-    </div>
-  }
-}
+const SideBar: React.FC = () => (
+  <div className={styles.SideBar} data-testid="SideBar">
+    SideBar Component
+  </div>
+);
 
 export default SideBar;

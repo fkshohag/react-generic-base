@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import '../AppHome/node_modules/@testing-library/jest-dom/extend-expect';
 import TopBar from './TopBar';
 
 describe('<TopBar />', () => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import TopBar from '../../../layout/TopBar/TopBar';
+import AppHome from '../../../layout/AppHome/AppHome';
 
 export interface Props {
   name: string
@@ -32,7 +32,7 @@ class Box extends React.Component<Props, State> {
 
   render() {
     return <div>
-      <TopBar></TopBar>
+      <AppHome></AppHome>
     </div>
   }
 }
