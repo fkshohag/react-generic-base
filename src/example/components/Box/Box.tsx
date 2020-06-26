@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import TopBar from '../../../layout/TopBar/TopBar';
 
 export interface Props {
   name: string
@@ -32,7 +32,7 @@ class Box extends React.Component<Props, State> {
 
   render() {
     return <div>
-      <Link to="/sing">Shop Now </Link>
+      <TopBar></TopBar>
     </div>
   }
 }
