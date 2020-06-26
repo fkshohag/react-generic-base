@@ -9,6 +9,7 @@ export interface State {
   value: number
 }
 
+
 class Box extends React.Component<Props, State> {
 
   constructor(props:Props) {
