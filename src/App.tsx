@@ -6,7 +6,6 @@ import RouteGenerator from './core/utility/route/route.generator';
 class App extends React.Component {
   render() {
     let routes: Array<any> = RouteGenerator.getRoute();
-    console.log(routes)
     const routeComponents = routes.map(({ path, exact , component }, key) =>
       <Route exact={exact} path={path} component={component} key={key} />);
     return (
