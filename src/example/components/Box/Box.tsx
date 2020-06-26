@@ -1,5 +1,4 @@
 import React from 'react';
-import { BoxService } from '../../services/BoxService';
 import { Link } from 'react-router-dom';
 
 export interface Props {
@@ -18,8 +17,7 @@ class Box extends React.Component<Props, State> {
       value: 0,
     }
   }  
-  username: String = BoxService.getName();
-
+  username: String = 'sdf';
   public onShowValue = (val: number): void => {
     this.setState({value:val});
   }

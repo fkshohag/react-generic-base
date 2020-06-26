@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { Route } from 'react-router-dom';
-import routes from './AppRouting.Module';
+import routes from './routes/AppRouting.Module';
 
 class App extends React.Component {
   render() {

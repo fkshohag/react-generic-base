@@ -5,7 +5,7 @@ import Box from './Box';
 
 describe('<Box />', () => {
   test('it should mount', () => {
-    render(<Box />);
+    render(<Box name=''/>);
     
     const box = screen.getByTestId('Box');
 

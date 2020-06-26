@@ -1,5 +1,5 @@
-import SignIn from './components/SignIn/SignIn';
-import Box from './components/Box/Box';
+import SignIn from '../example/components/SignIn/SignIn';
+import Box from '../example/components/Box/Box';
 const routes = [
     {
         path: '/',
