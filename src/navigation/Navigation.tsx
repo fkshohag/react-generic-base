@@ -3,7 +3,7 @@ import ReceiptIcon from "@material-ui/icons/Receipt";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import DesktopWindowsIcon from "@material-ui/icons/DesktopWindows";
 import SettingsIcon from "@material-ui/icons/Settings";
-const onClick = (e:any, item:any) => {
+const onClick = (e: any, item: any) => {
     window.alert(JSON.stringify(item, null, 2));
 }
 export const items: any = [
