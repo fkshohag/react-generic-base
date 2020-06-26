@@ -4,9 +4,11 @@ import { RouteList } from './routeInterface';
 
 class RouteGenerator {
     private static routelist: Array<RouteList> = [];
+
     public static getRoute(): any {
         console.log(RouteGenerator.generate(routes));
     }
+    
     private static generate(primaryRouteList:Array<any>): Array<RouteList> {
         
         primaryRouteList.forEach((route) => {
