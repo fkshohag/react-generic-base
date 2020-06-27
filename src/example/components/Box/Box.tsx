@@ -1,5 +1,4 @@
 import React from 'react';
-import AppHome from '../../../layout/AppHome/AppHome';
 
 export interface Props {
   name: string
@@ -18,22 +17,47 @@ class Box extends React.Component<Props, State> {
       value: 0,
     }
   }  
+
+  // Action 
+  // private increment(): any {
+  //   return {
+  //     type: 'INCREMENT'
+  //   }
+  // }
+
+  // private decement(): any {
+  //   return {
+  //     type: 'DECREMENT'
+  //   }
+  // }
+
+  // // Reducer 
+  // private conunter(state:any = 0, action: any): any {
+  //   switch(action.type) {
+  //     case 'INCREMENT':
+  //       return state + 1;
+  //     case 'DECREMENT':
+  //       return state - 1;
+  //   }
+  // }
+
   username: String = 'sdf';
   public onShowValue = (val: number): void => {
     this.setState({value:val});
   }
 
   componentWillMount() {
-    console.log('Component will mount!');
+    // let store: any = createStore(this.conunter);
+    // store.dispatch(this.increment());
+    // store.dispatch(this.decement());
+    // store.dispatch(this.decement());
+    // console.log(store.getState());
   }
   
-  componentDidMount() {
-    console.log('after first render')
-  }
 
   render() {
     return <div>
-      <AppHome></AppHome>
+      <h1>Hello World</h1>
     </div>
   }
 }
