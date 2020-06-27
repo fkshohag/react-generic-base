@@ -1,4 +1,5 @@
 import React from 'react';
+import { createStore } from 'redux';
 
 export interface Props {
   name: string
@@ -18,28 +19,28 @@ class Box extends React.Component<Props, State> {
     }
   }  
 
-  // Action 
-  // private increment(): any {
-  //   return {
-  //     type: 'INCREMENT'
-  //   }
-  // }
+  // action 
+  private increment(): any {
+    return {
+      type: 'INCREMENT'
+    }
+  }
 
-  // private decement(): any {
-  //   return {
-  //     type: 'DECREMENT'
-  //   }
-  // }
+  private decement(): any {
+    return {
+      type: 'DECREMENT'
+    }
+  }
 
-  // // Reducer 
-  // private conunter(state:any = 0, action: any): any {
-  //   switch(action.type) {
-  //     case 'INCREMENT':
-  //       return state + 1;
-  //     case 'DECREMENT':
-  //       return state - 1;
-  //   }
-  // }
+  // Reducer 
+  private conunter(state:any = 0, action: any): any {
+    switch(action.type) {
+      case 'INCREMENT':
+        return state + 1;
+      case 'DECREMENT':
+        return state - 1;
+    }
+  }
 
   username: String = 'sdf';
   public onShowValue = (val: number): void => {
@@ -47,11 +48,11 @@ class Box extends React.Component<Props, State> {
   }
 
   componentWillMount() {
-    // let store: any = createStore(this.conunter);
-    // store.dispatch(this.increment());
-    // store.dispatch(this.decement());
-    // store.dispatch(this.decement());
-    // console.log(store.getState());
+    let store: any = createStore(this.conunter);
+    store.dispatch(this.increment());
+    store.dispatch(this.decement());
+    store.dispatch(this.decement());
+    console.log(store.getState());
   }
   
 
