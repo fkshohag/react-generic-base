@@ -81,6 +81,7 @@ function SidebarItem({ depthStep = 10, depth = 0, expanded, item, ...rest }:any)
 function SideBar({ items, depthStep, depth, expanded }:any) {
   return (
     <div className="sidebar">
+      <Divider style={{ margin: "6px 0" }} />
       <List disablePadding dense>
         {items.map((sidebarItem:any, index:any) => (
           <React.Fragment key={`${sidebarItem.name}${index}`}>
